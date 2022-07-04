@@ -46,7 +46,8 @@ inputs = keras.Input(shape=(400, 400, 3))
 # learn in a few paragraphs.
 x = base_model(inputs, training=False)
 # Convert features of shape `base_model.output_shape[1:]` to vectors
-x = keras.layers.GlobalAveragePooling2D()(x)
+# x = keras.layers.GlobalAveragePooling2D()(x)
+x = keras.layers.Flatten()(x)
 # A Dense classifier with a single unit (binary classification)
 outputs = keras.layers.Dense(1)(x)
 model = keras.Model(inputs, outputs)
