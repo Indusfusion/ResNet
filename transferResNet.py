@@ -35,7 +35,7 @@ val_ds = val_ds.cache().prefetch(buffer_size=10)
 base_model = keras.applications.ResNet50(
     weights = 'imagenet',  # Load weights pre-trained on ImageNet.
     input_shape = (400, 400, 3),
-    pooling = 'max'
+    pooling = 'max',
     include_top = False)  # Do not include the ImageNet classifier at the top.
     
 base_model.trainable = False
