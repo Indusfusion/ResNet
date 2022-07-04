@@ -55,7 +55,14 @@ model = keras.Model(inputs, outputs)
 model.compile(optimizer=keras.optimizers.Adam(),
               loss=keras.losses.BinaryCrossentropy(from_logits=True),
               metrics=[keras.metrics.BinaryAccuracy()])
+
+model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
+    filepath="C:/Users/Robot1/Desktop/FODnew/",
+    save_weights_only=True,
+    monitor='val_accuracy',
+    mode='max',
+    save_best_only=True)
               
-model.fit(train_ds, epochs=20, validation_data=val_ds)
+model.fit(train_ds, epochs=20, callbacks = [model_checkpoint_callback], validation_data=val_ds)
 
 #os.system('shutdown -s')
