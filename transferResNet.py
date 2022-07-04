@@ -49,11 +49,11 @@ x = base_model(inputs, training=False)
 # x = keras.layers.GlobalAveragePooling2D()(x)
 x = keras.layers.Flatten()(x)
 # A Dense classifier with a single unit (binary classification)
-outputs = keras.layers.Dense(1)(x)
+outputs = keras.layers.Dense(1, activation="sigmoid")(x)
 model = keras.Model(inputs, outputs)
 
 model.compile(optimizer=keras.optimizers.Adam(),
-              loss=keras.losses.BinaryCrossentropy(from_logits=True),
+              loss=keras.losses.BinaryCrossentropy,
               metrics=[keras.metrics.BinaryAccuracy()])
 
 model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
