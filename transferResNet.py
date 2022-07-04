@@ -56,6 +56,6 @@ model.compile(optimizer=keras.optimizers.Adam(),
               loss=keras.losses.BinaryCrossentropy(from_logits=True),
               metrics=[keras.metrics.BinaryAccuracy()])
               
-model.fit(train_ds, epochs=20, callbacks=..., validation_data=val_ds)
+model.fit(train_ds, epochs=20, validation_data=val_ds)
 
 #os.system('shutdown -s')
