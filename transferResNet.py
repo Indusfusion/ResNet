@@ -33,7 +33,7 @@ from tensorflow import keras
 from tensorflow.keras import layers
 import numpy as np
 
-data_root = ("C:/Users/Robot1/Desktop/FOD/git/224x224dataset")
+data_root = ("C:/Users/Robot1/Desktop/FODnew/Dataset1")
 TRAINING_DATA_DIR = str(data_root)
 image_size = (400, 400)
 batch_size = 32
