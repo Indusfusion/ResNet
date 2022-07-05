@@ -21,7 +21,7 @@ model = tf.keras.models.load_model(modelPath)#,custom_objects={'KerasLayer':hub.
 
 image_size = (400, 400)
 
-dir = listdir(testDataPath)
+dir = os.listdir(testDataPath)
 
 for i in dir:
     file = "C:/Users/Robot1/Desktop/FODnew/testData/" + str(i)
