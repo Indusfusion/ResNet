@@ -57,7 +57,7 @@ model.compile(optimizer=keras.optimizers.Adam(),
 
 model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
     filepath="C:/Users/Robot1/Desktop/FODnew/",
-    save_weights_only=True,
+    save_weights_only=False,
     monitor='val_binary_accuracy',
     mode='max',
     save_best_only=True)
