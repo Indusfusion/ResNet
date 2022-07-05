@@ -5,7 +5,7 @@ from tensorflow import keras
 from tensorflow.keras import layers
 import numpy as np
 
-data_root = ("C:/Users/Robot1/Desktop/FOD/git/224x224dataset")
+data_root = ("C:/Users/Robot1/Desktop/FODnew/Dataset1/")
 TRAINING_DATA_DIR = str(data_root)
 image_size = (400, 400)
 batch_size = 32
@@ -65,6 +65,6 @@ try:
         save_best_only=True)
 
     model.fit(train_ds, epochs=20, callbacks = [model_checkpoint_callback], validation_data=val_ds)
-    os.system('shutdown -s')
+    #os.system('shutdown -s')
 except:
-    os.system('shutdown -s')
+    #os.system('shutdown -s')
