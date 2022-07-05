@@ -65,6 +65,5 @@ try:
         save_best_only=True)
 
     model.fit(train_ds, epochs=20, callbacks = [model_checkpoint_callback], validation_data=val_ds)
-    #os.system('shutdown -s')
 except:
-    #os.system('shutdown -s')
+    print("oh no")
