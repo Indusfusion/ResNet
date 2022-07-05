@@ -16,7 +16,6 @@ try:
         validation_split=0.2,
         subset="training",
         seed=1337,
-        label_mode='binary',
         image_size=image_size,
         batch_size=batch_size,
     )
@@ -25,7 +24,6 @@ try:
         validation_split=0.2,
         subset="validation",
         seed=1337,
-        label_mode='binary',
         image_size=image_size,
         batch_size=batch_size,
     )
