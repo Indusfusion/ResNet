@@ -32,7 +32,7 @@ class GradCAM:
 			  outputs=[self.inner_model.get_layer(self.layerName).output,
 			  self.inner_model.output])   
 		# record operations for automatic differentiation
-		with tf.GradientTape() as tape:
+		with tf.GradientTape() as tape: 
 			# cast the image tensor to a float-32 data type, pass the
 			# image through the gradient model, and grab the loss
 			# associated with the specific class index
