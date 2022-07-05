@@ -31,8 +31,7 @@ for i in dir:
 
     predictions = model.predict(img_array)
     predictions = predictions[0]
-    print(predictions)
-    if predictions > 0.5:
-        print("BAD")
+    if predictions < 0.5:
+        print(predictions, "BAD", i)
     else:
-        print("GOOD")
+        print(predictions, "GOOD", i)
