@@ -52,7 +52,7 @@ outputs = keras.layers.Dense(1, activation="sigmoid")(x)
 model = keras.Model(inputs, outputs)
 
 model.compile(optimizer=keras.optimizers.Adam(),
-              loss=keras.losses.BinaryCrossentropy,
+              loss = keras.losses.binary_crossentropy,
               metrics=[keras.metrics.BinaryAccuracy()])
 
 model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
