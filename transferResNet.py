@@ -62,4 +62,4 @@ model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
     mode='max',
     save_best_only=True)
 
-model.fit(train_ds, epochs=10, callbacks = [model_checkpoint_callback], validation_data=val_ds)
+model.fit(train_ds, epochs=5, callbacks = [model_checkpoint_callback], validation_data=val_ds)
