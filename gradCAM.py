@@ -45,10 +45,10 @@ print("This image is %.2f percent good and %.2f percent bad."% (100 * (1 - score
     
 if (score > 0.5):
 	label = 'good'
-  	prob = score
+	prob = score
 else: 
 	label = 'bad'
-  	prob = 1 - score
+	prob = 1 - score
 
 # initialize our gradient class activation map and build the heatmap
 cam = GradCAM(model, None, inner_model=model.get_layer('resnet'), layerName='conv5_block3_out')
