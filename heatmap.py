@@ -51,7 +51,7 @@ else:
 	prob = 1 - score
 
 # initialize our gradient class activation map and build the heatmap
-cam = GradCAM(model, None, inner_model=model.get_layer('resnet'), layerName='conv5_block3_out')
+cam = GradCAM(model, None, inner_model=model.get_layer('resnet50'), layerName='conv5_block3_out')
 heatmap = cam.compute_heatmap(image)
 # resize the resulting heatmap to the original input image dimensions
 # and then overlay heatmap on top of the image
