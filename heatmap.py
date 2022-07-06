@@ -28,8 +28,11 @@ args = vars(ap.parse_args())
 # initialize the model to be ResNet
 model = keras.models.load_model('C:/Users/Robot1/Desktop/FODnew')
 
+print(args["image"])
 list = os.listdir(args["image"])
+print(list)
 list = random.shuffle(list)
+print(list)
 
 for i in list[0:20]:
 	# load the original image from disk (in OpenCV format) and then
