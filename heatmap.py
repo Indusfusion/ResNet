@@ -42,7 +42,7 @@ for i in list[0:20]:
 	resized = cv2.resize(orig, (400, 400))
 	# load the input image from disk (in Keras/TensorFlow format) and
 	# preprocess it
-	image = load_img(args["image"] + i, target_size=(400, 400))
+	image = load_img(args["image"] + "/" + i, target_size=(400, 400))
 	image = img_to_array(image)
 	image = np.expand_dims(image, axis=0)
 	image = imagenet_utils.preprocess_input(image)
