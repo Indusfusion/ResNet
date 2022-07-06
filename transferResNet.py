@@ -63,3 +63,20 @@ model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
     save_best_only=True)
 
 model.fit(train_ds, epochs=5, callbacks = [model_checkpoint_callback], validation_data=val_ds)
+
+###############################Fine-Tuning##################################################
+
+base_model.trainable = True
+
+model.compile(optimizer=keras.optimizers.Adam(1e-5),
+              loss = keras.losses.binary_crossentropy,
+              metrics=[keras.metrics.BinaryAccuracy()])
+
+model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
+    filepath="C:/Users/Robot1/Desktop/FODnew/fine-tuned-model",
+    save_weights_only=False,
+    monitor='val_binary_accuracy',
+    mode='max',
+    save_best_only=True)
+
+model.fit(train_ds, epochs=2, callbacks = [model_checkpoint_callback], validation_data=val_ds)
