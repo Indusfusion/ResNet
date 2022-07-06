@@ -32,7 +32,7 @@ print(args["image"])
 list = os.listdir(args["image"])
 print(list)
 print(type(list))
-list = random.shuffle(list)
+random.shuffle(list)
 print(list)
 
 for i in list[0:20]:
