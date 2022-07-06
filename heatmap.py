@@ -38,7 +38,7 @@ print(list)
 for i in list[0:20]:
 	# load the original image from disk (in OpenCV format) and then
 	# resize the image to its target dimensions
-	orig = cv2.imread(args["image"] + i)
+	orig = cv2.imread(args["image"] + "/" + i)
 	resized = cv2.resize(orig, (400, 400))
 	# load the input image from disk (in Keras/TensorFlow format) and
 	# preprocess it
