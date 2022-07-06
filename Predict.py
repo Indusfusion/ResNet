@@ -55,4 +55,4 @@ for i in dir1:
         results -= 1
         print(predictions, "GOOD", i)
         
-  print(f"Results: {results}/{total}    Accuracy: {float(results)/float(total)}%")
+print(f"Results: {results}/{total}    Accuracy: {float(results)/float(total)}%")
