@@ -76,6 +76,6 @@ for i in list[0:20]:
 	# to our screen
 	output = np.vstack([orig, heatmap, output])
 	output = imutils.resize(output, height=700)
-	cv2.imwrite("c:users/robot1/desktop/fodnew/heatmaps/" + i, output)
+	cv2.imwrite("c:/users/robot1/desktop/fodnew/heatmaps/" + i, output)
 	#cv2.imshow("Output", output)
 	#cv2.waitKey(0)
