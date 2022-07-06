@@ -31,6 +31,7 @@ model = keras.models.load_model('C:/Users/Robot1/Desktop/FODnew')
 print(args["image"])
 list = os.listdir(args["image"])
 print(list)
+print(type(list))
 list = random.shuffle(list)
 print(list)
 
