@@ -17,11 +17,13 @@ modelPath = "C:/Users/Robot1/Desktop/FODnew/"
 
 testDataPath = "C:/Users/Robot1/Desktop/FODnew/testData"
 
-model = tf.keras.models.load_model(modelPath)#,custom_objects={'KerasLayer':hub.KerasLayer})
+model = tf.keras.models.load_model(modelPath)
 
 image_size = (400, 400)
 
 dir = os.listdir(testDataPath)
+
+results = len(dir)
 
 for i in dir:
     file = "C:/Users/Robot1/Desktop/FODnew/testData/" + str(i)
