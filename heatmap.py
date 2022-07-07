@@ -26,16 +26,16 @@ ap.add_argument("-m", "--model", type=str, default="resnet50",
 args = vars(ap.parse_args())
 
 # initialize the model to be ResNet
-model = keras.models.load_model('C:/Users/Robot1/Desktop/FODnew')
+model = keras.models.load_model('C:/Users/Robot1/Desktop/FODnew/3ItemModel')
 
 print(args["image"])
-list = os.listdir(args["image"])
-print(list)
-print(type(list))
-random.shuffle(list)
-print(list)
+listt = os.listdir(args["image"])
+print(listt)
+print(type(listt))
+random.shuffle(listt)
+print(listt)
 
-for i in list[0:20]:
+for i in listt:
 	# load the original image from disk (in OpenCV format) and then
 	# resize the image to its target dimensions
 	orig = cv2.imread(args["image"] + "/" + i)
