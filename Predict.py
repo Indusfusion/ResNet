@@ -28,7 +28,7 @@ results = len(dir0) + len(dir1)
 total = len(dir0) + len(dir1)
 
 for i in dir0:
-    file = "C:/Users/Robot1/Desktop/FODnew/testData/good/" + str(i)
+    file = "C:/Users/Robot1/Desktop/FODnew/DATA/Test/good/" + str(i)
     img = keras.preprocessing.image.load_img(file, target_size=image_size)
     img_array = keras.preprocessing.image.img_to_array(img)
     img_array = tf.expand_dims(img_array, 0)  # Create batch axis
@@ -42,7 +42,7 @@ for i in dir0:
         print(predictions, "GOOD", i)
 
 for i in dir1:
-    file = "C:/Users/Robot1/Desktop/FODnew/testData/bad/" + str(i)
+    file = "C:/Users/Robot1/Desktop/FODnew/DATA/Test/bad/" + str(i)
     img = keras.preprocessing.image.load_img(file, target_size=image_size)
     img_array = keras.preprocessing.image.img_to_array(img)
     img_array = tf.expand_dims(img_array, 0)  # Create batch axis
