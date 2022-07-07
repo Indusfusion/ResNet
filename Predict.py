@@ -13,9 +13,9 @@ import os
 import cv2
 
 
-modelPath = "C:/Users/Robot1/Desktop/FODnew/"
+modelPath = "C:/Users/Robot1/Desktop/FODnew/3ItemModel"
 
-testDataPath = "C:/Users/Robot1/Desktop/FODnew/testData"
+testDataPath = "C:/Users/Robot1/Desktop/FODnew/DATA/Test"
 
 model = tf.keras.models.load_model(modelPath)
 
