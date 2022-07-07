@@ -5,5 +5,6 @@ lines = f.readlines()
 for line in lines:
     line = line.strip()
     print(line)
-    cv2.imshow(f"{line}", f"{line}")
+    img = cv2.imread(f"{line}")
+    cv2.imshow(f"{line}", img)
     cv2.waitKey(0)
