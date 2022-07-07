@@ -24,6 +24,8 @@ image_size = (400, 400)
 dir0 = os.listdir(testDataPath + "/good")
 dir1 = os.listdir(testDataPath + "/bad")
 
+f = open('C:/Users/Robot1/Desktop/FODnew/WrongPredictions.txt', 'w')
+
 results = len(dir0) + len(dir1)
 total = len(dir0) + len(dir1)
 
@@ -38,6 +40,8 @@ for i in dir0:
     if predictions < 0.5:
         results -= 1
         print(predictions, "BAD", i)
+        string = "C:/Users/Robot1/Desktop/FODnew/DATA/Test/good/" + str(i) + "\n"
+        f.write(string)
     else:
         print(predictions, "GOOD", i)
 
@@ -54,5 +58,6 @@ for i in dir1:
     else:
         results -= 1
         print(predictions, "GOOD", i)
-        
+        string = "C:/Users/Robot1/Desktop/FODnew/DATA/Test/bad/" + str(i) + "\n"
+        f.write(string)
 print(f"Results: {results}/{total}    Accuracy: {float(results)/float(total)*100}%")
