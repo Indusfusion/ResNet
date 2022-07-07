@@ -5,7 +5,7 @@ from tensorflow import keras
 from tensorflow.keras import layers
 import numpy as np
 
-data_root = ("C:/Users/Robot1/Desktop/FODnew/Dataset1/")
+data_root = ("C:/Users/Robot1/Desktop/FODnew/DATA/Train")
 TRAINING_DATA_DIR = str(data_root)
 image_size = (400, 400)
 batch_size = 32
@@ -56,27 +56,27 @@ model.compile(optimizer=keras.optimizers.Adam(),
               metrics=[keras.metrics.BinaryAccuracy()])
 
 model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
-    filepath="C:/Users/Robot1/Desktop/FODnew/",
+    filepath="C:/Users/Robot1/Desktop/FODnew/3ItemModel",
     save_weights_only=False,
     monitor='val_binary_accuracy',
     mode='max',
     save_best_only=True)
 
-model.fit(train_ds, epochs=5, callbacks = [model_checkpoint_callback], validation_data=val_ds)
+model.fit(train_ds, epochs=10, callbacks = [model_checkpoint_callback], validation_data=val_ds)
 
 ###############################Fine-Tuning##################################################
 
-base_model.trainable = True
+# base_model.trainable = True
 
-model.compile(optimizer=keras.optimizers.Adam(1e-5),
-              loss = keras.losses.binary_crossentropy,
-              metrics=[keras.metrics.BinaryAccuracy()])
+# model.compile(optimizer=keras.optimizers.Adam(1e-5),
+              # loss = keras.losses.binary_crossentropy,
+              # metrics=[keras.metrics.BinaryAccuracy()])
 
-model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
-    filepath="C:/Users/Robot1/Desktop/FODnew/fine-tuned-model",
-    save_weights_only=False,
-    monitor='val_binary_accuracy',
-    mode='max',
-    save_best_only=True)
+# model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
+    # filepath="C:/Users/Robot1/Desktop/FODnew/fine-tuned-model",
+    # save_weights_only=False,
+    # monitor='val_binary_accuracy',
+    # mode='max',
+    # save_best_only=True)
 
-model.fit(train_ds, epochs=2, batch_size = 1, callbacks = [model_checkpoint_callback], validation_data=val_ds)
+# model.fit(train_ds, epochs=2, batch_size = 1, callbacks = [model_checkpoint_callback], validation_data=val_ds)
