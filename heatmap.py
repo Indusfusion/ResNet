@@ -26,7 +26,7 @@ ap.add_argument("-m", "--model", type=str, default="resnet50",
 args = vars(ap.parse_args())
 
 # initialize the model to be ResNet
-model = keras.models.load_model('C:/Users/Robot1/Desktop/FODnew/3ItemModel')
+model = keras.models.load_model('C:/Users/Robot1/Desktop/FODnew/3ItemModel_v2')
 
 print(args["image"])
 listt = os.listdir(args["image"])
