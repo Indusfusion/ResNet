@@ -13,7 +13,7 @@ import os
 import cv2
 
 
-modelPath = "C:/Users/Robot1/Desktop/FODnew/3ItemModel_v3"
+modelPath = "C:/Users/Robot1/Desktop/FODnew/fine-tuned-model"
 
 testDataPath = "C:/Users/Robot1/Desktop/FODnew/DATA/Test"
 
